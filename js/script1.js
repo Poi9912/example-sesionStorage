@@ -2,7 +2,7 @@ function save(){
     const inputName = document.getElementById("name").value
     const inputCity = document.getElementById("city").value
     
-    if (inputName == '' && inputCity == ''){
+    if (inputName == '' || inputCity == ''){
         alert("Los campos son requeridos")
         return
     }
