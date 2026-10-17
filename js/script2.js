@@ -1,10 +1,20 @@
 function showName(){
-    const name = sessionStorage.getItem("name")
-    name === null ? document.getElementById("salute").textContent="No hay datos guardados" : document.getElementById("salute").textContent=`Hola, ${name}`
+    const name = localStorage.getItem("name")
+    const city = localStorage.getItem("city")
+
+    console.log(name)
+    console.log(city)
+
+    if (name==null && city==null){
+        document.getElementById("salute").textContent="No hay datos guardados"
+    } else {
+        document.getElementById("salute").textContent=`Hola, ${name} de ${city}`
+    }
+
 }
 
 function clearName(){
-    sessionStorage.removeItem("name")
+    localStorage.clear()
     showName()
 }
 
